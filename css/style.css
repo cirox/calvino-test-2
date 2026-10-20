@@ -1,0 +1,143 @@
+:root {
+  /* colori funzionali: il nome dice il ruolo, non la tinta
+     (in Figma sono gli stili di colore) */
+  --sfondo: #FFFFFF;
+  --sfondo-evidenza: #EAEAE6;
+  --sfondo-primo-piano: #2B3BD9;
+  --testo: #111111;
+  --testo-tenue: #66645F;
+
+  /* corpi: sul telefono; da 64em cambiano */
+  --corpo-piccolo: 0.875rem;  /* 14 px */
+  --corpo-testo: 1.25rem;     /* 20 px  → 28 */
+  --corpo-intro: 1.5rem;      /* 24 px  → 40 */
+  --corpo-titolo: 2.25rem;    /* 36 px  → 80 */
+  --corpo-grande: 3rem;       /* 48 px  → 128 */
+
+  /* spazi */
+  --spazio-s: 1rem;           /* 16 px */
+  --spazio-m: 2.5rem;         /* 40 px */
+  --spazio-l: 4rem;           /* 64 px */
+  --spazio-xl: 7.5rem;        /* 120 px */
+
+  /* lo spazio ai lati quando la finestra è stretta */
+  --margine: 1rem;            /* 16 px */
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Schibsted Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, ol {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.contenitore {
+	max-width: 1100px;
+	margin: 0 auto; 
+    padding: 0 32px;
+}
+
+header {
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--testo-tenue);
+}
+
+.apertura {
+    padding: 64px 0;
+}
+
+.apertura h1 {
+    font-size: var(--corpo-grande);
+    padding: 32px 0;
+}
+
+.apertura p {
+    font-size:  var(--corpo-intro);
+    max-width: 40ch;
+    padding-bottom: 32px;
+}
+
+.copertine {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 32px;
+}
+
+.copertine img {
+    width: 100%;
+}
+
+.copertine li p {
+    font-size:var(--corpo-piccolo);
+    padding: 12px 0 0 0;
+}
+
+.in-evidenza {
+    padding: 62px 0;
+}
+
+.in-evidenza-contenuto {
+    display: flex;
+    padding: 64px 0;
+    border-top: 1px solid var(--testo-tenue);
+    gap:64px;
+}
+
+.in-evidenza-contenuto h2 {
+    flex: 0 0 300px;
+    font-size:var(--corpo-piccolo);
+    font-weight: normal;
+}
+
+.in-evidenza-contenuto p {
+    font-size:var(--corpo-intro);
+}
+
+.in-primo-piano {
+    background-color: var(--sfondo-primo-piano);
+    color:#fff;
+    padding: 64px 0;
+}
+
+.in-primo-piano .contenitore {
+    display: flex;
+    justify-content: space-between;
+    gap: 128px;
+    align-items: center;
+    
+}
+
+.in-primo-piano-content {
+      flex: 0 1 800px
+}
+
+.in-primo-piano-content h2 {
+    font-size: var(--corpo-grande);
+    line-height: 1;
+    margin-bottom: 12px;
+  
+}
+
+.in-primo-piano-img {
+}
+
+@media (max-width: 600px) {
+    .copertine {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
